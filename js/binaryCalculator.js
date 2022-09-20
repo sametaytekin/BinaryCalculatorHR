@@ -36,20 +36,14 @@ function Calculator(text,operator){
     let number1= parseInt(numbers[0],2)
     let number2 = parseInt(numbers[1],2)
     let result=0
-
-    switch (operator) {
-        case "+":
-            result= number1+number2
-            break;
-        case "-":
-            result=number1-number2
-            break
-        case "*":
-            result=number1*number2
-            break
-        case "/":
-            result=number1/number2        
+    const operatorMap={
+        "+":number1+number2,
+        "-":number1-number2,
+        "*":number1*number2,
+        "/":number1/number2
     }
+
+    result=operatorMap[operator];
 
     return result.toString(2)
 
